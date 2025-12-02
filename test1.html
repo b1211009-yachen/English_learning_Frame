@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vocabulary Test</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+.question { font-weight: bold; }
+button { margin-top: 15px; padding: 8px 15px; }
+</style>
+</head>
+<body>
+
+<h2>Vocabulary Test</h2>
+<p class="question">1. The manager will ______ the final report tomorrow.</p>
+
+<label><input type="radio" name="q1" value="approve"> approve</label><br>
+<label><input type="radio" name="q1" value="appear"> appear</label><br>
+<label><input type="radio" name="q1" value="argue"> argue</label><br>
+<label><input type="radio" name="q1" value="avoid"> avoid</label><br>
+
+<button onclick="checkAnswer()">Submit</button>
+<p id="result"></p>
+
+<script>
+function checkAnswer() {
+    const answer = document.querySelector('input[name="q1"]:checked');
+    if (!answer) {
+        document.getElementById("result").innerHTML = "Please select an answer.";
+    } else if (answer.value === "approve") {
+        document.getElementById("result").innerHTML = "✔ Correct!";
+    } else {
+        document.getElementById("result").innerHTML = "✘ Incorrect. Try again!";
+    }
+}
+</script>
+
+</body>
+</html>

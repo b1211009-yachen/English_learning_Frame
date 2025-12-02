@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grammar Test</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+button { margin-top: 15px; padding: 8px 15px; }
+</style>
+</head>
+<body>
+
+<h2>Grammar Test</h2>
+
+<p>Choose the correct answer:</p>
+<p class="question">The report ______ by Friday.</p>
+
+<label><input type="radio" name="q1" value="mustFinish"> must finish</label><br>
+<label><input type="radio" name="q1" value="mustBeFinished"> must be finished</label><br>
+<label><input type="radio" name="q1" value="hasFinished"> has finished</label><br>
+
+<button onclick="checkAnswer()">Submit</button>
+<p id="result"></p>
+
+<script>
+function checkAnswer() {
+    const answer = document.querySelector('input[name="q1"]:checked');
+    if (!answer) document.getElementById("result").innerHTML = "Please choose one.";
+    else if (answer.value === "mustBeFinished") document.getElementById("result").innerHTML = "✔ Correct!";
+    else document.getElementById("result").innerHTML = "✘ Incorrect.";
+}
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reading Test</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+.question { font-weight: bold; }
+button { margin-top: 15px; padding: 8px 15px; }
+</style>
+</head>
+<body>
+
+<h2>Reading Test</h2>
+
+<p>The company will open a new branch office next month in Seoul to expand
+its business in Asia.</p>
+
+<p class="question">What is the purpose of opening a new branch?</p>
+<label><input type="radio" name="q1" value="expand"> To expand business in Asia</label><br>
+<label><input type="radio" name="q1" value="close"> To close other offices</label><br>
+<label><input type="radio" name="q1" value="train"> To train new employees</label><br>
+
+<button onclick="check()">Submit</button>
+<p id="result"></p>
+
+<script>
+function check() {
+    const a = document.querySelector('input[name="q1"]:checked');
+    if (!a) document.getElementById("result").innerHTML = "Choose one.";
+    else if (a.value === "expand") document.getElementById("result").innerHTML = "✔ Correct!";
+    else document.getElementById("result").innerHTML = "✘ Incorrect.";
+}
+</script>
+
+</body>
+</html>
+
